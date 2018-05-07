@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 6/05/2018 04:13:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ubosque.fifa.jhs.persistence.Alumnos" table="ALUMNOS" schema="JR" optimistic-lock="version">
+        <id name="matricula" type="short">
+            <column name="MATRICULA" precision="4" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="login" class="com.ubosque.fifa.jhs.persistence.Login" fetch="select">
+            <column name="USUARIO" length="200" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="200" />
+        </property>
+        <property name="app" type="string">
+            <column name="APP" length="200" />
+        </property>
+        <property name="apm" type="string">
+            <column name="APM" length="200" />
+        </property>
+        <property name="edad" type="java.lang.Short">
+            <column name="EDAD" precision="4" scale="0" />
+        </property>
+        <property name="sexo" type="string">
+            <column name="SEXO" length="200" />
+        </property>
+        <property name="fechaRegistro" type="date">
+            <column name="FECHA_REGISTRO" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

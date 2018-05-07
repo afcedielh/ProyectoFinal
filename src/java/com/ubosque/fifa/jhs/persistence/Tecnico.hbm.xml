@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 6/05/2018 04:13:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ubosque.fifa.jhs.persistence.Tecnico" table="TECNICO" schema="JR" optimistic-lock="version">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="persona" class="com.ubosque.fifa.jhs.persistence.Persona" fetch="select">
+            <column name="IDPERSONA" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="pais" class="com.ubosque.fifa.jhs.persistence.Pais" fetch="select">
+            <column name="IDEQUIPO" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipotecnico" class="com.ubosque.fifa.jhs.persistence.Tipotecnico" fetch="select">
+            <column name="TIPO" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

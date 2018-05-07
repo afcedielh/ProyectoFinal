@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 6/05/2018 04:13:48 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.ubosque.fifa.jhs.persistence.Usuario" table="USUARIO" schema="JR" optimistic-lock="version">
+        <id name="id" type="big_decimal">
+            <column name="ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="persona" class="com.ubosque.fifa.jhs.persistence.Persona" fetch="select">
+            <column name="PERSONA" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuario" class="com.ubosque.fifa.jhs.persistence.Usuario" fetch="select">
+            <column name="ROL" precision="22" scale="0" not-null="true" />
+        </many-to-one>
+        <property name="clave" type="string">
+            <column name="CLAVE" not-null="true" />
+        </property>
+        <set name="usuarios" table="USUARIO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ROL" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ubosque.fifa.jhs.persistence.Usuario" />
+        </set>
+    </class>
+</hibernate-mapping>
