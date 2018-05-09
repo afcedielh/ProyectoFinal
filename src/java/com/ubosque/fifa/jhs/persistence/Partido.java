@@ -1,5 +1,5 @@
 package com.ubosque.fifa.jhs.persistence;
-// Generated 6/05/2018 04:13:47 PM by Hibernate Tools 4.3.1
+// Generated 8/05/2018 07:48:31 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -14,8 +14,8 @@ public class Partido  implements java.io.Serializable {
 
 
      private BigDecimal id;
-     private Pais paisByEquipolocal;
      private Pais paisByEquipovisitante;
+     private Pais paisByEquipolocal;
      private Estadopartido estadopartido;
      private Estadio estadio;
      private Arbitro arbitro;
@@ -30,20 +30,20 @@ public class Partido  implements java.io.Serializable {
     }
 
 	
-    public Partido(BigDecimal id, Pais paisByEquipolocal, Pais paisByEquipovisitante, Estadopartido estadopartido, Estadio estadio, Arbitro arbitro, Fase fase, BigDecimal temperatura) {
+    public Partido(BigDecimal id, Pais paisByEquipovisitante, Pais paisByEquipolocal, Estadopartido estadopartido, Estadio estadio, Arbitro arbitro, Fase fase, BigDecimal temperatura) {
         this.id = id;
-        this.paisByEquipolocal = paisByEquipolocal;
         this.paisByEquipovisitante = paisByEquipovisitante;
+        this.paisByEquipolocal = paisByEquipolocal;
         this.estadopartido = estadopartido;
         this.estadio = estadio;
         this.arbitro = arbitro;
         this.fase = fase;
         this.temperatura = temperatura;
     }
-    public Partido(BigDecimal id, Pais paisByEquipolocal, Pais paisByEquipovisitante, Estadopartido estadopartido, Estadio estadio, Arbitro arbitro, Fase fase, Date fecha, String marcador, BigDecimal temperatura, Set penalizacions, Set partidoconvocadoses) {
+    public Partido(BigDecimal id, Pais paisByEquipovisitante, Pais paisByEquipolocal, Estadopartido estadopartido, Estadio estadio, Arbitro arbitro, Fase fase, Date fecha, String marcador, BigDecimal temperatura, Set penalizacions, Set partidoconvocadoses) {
        this.id = id;
-       this.paisByEquipolocal = paisByEquipolocal;
        this.paisByEquipovisitante = paisByEquipovisitante;
+       this.paisByEquipolocal = paisByEquipolocal;
        this.estadopartido = estadopartido;
        this.estadio = estadio;
        this.arbitro = arbitro;
@@ -62,19 +62,19 @@ public class Partido  implements java.io.Serializable {
     public void setId(BigDecimal id) {
         this.id = id;
     }
-    public Pais getPaisByEquipolocal() {
-        return this.paisByEquipolocal;
-    }
-    
-    public void setPaisByEquipolocal(Pais paisByEquipolocal) {
-        this.paisByEquipolocal = paisByEquipolocal;
-    }
     public Pais getPaisByEquipovisitante() {
         return this.paisByEquipovisitante;
     }
     
     public void setPaisByEquipovisitante(Pais paisByEquipovisitante) {
         this.paisByEquipovisitante = paisByEquipovisitante;
+    }
+    public Pais getPaisByEquipolocal() {
+        return this.paisByEquipolocal;
+    }
+    
+    public void setPaisByEquipolocal(Pais paisByEquipolocal) {
+        this.paisByEquipolocal = paisByEquipolocal;
     }
     public Estadopartido getEstadopartido() {
         return this.estadopartido;

@@ -1,5 +1,5 @@
 package com.ubosque.fifa.jhs.persistence;
-// Generated 6/05/2018 04:13:47 PM by Hibernate Tools 4.3.1
+// Generated 8/05/2018 07:48:31 PM by Hibernate Tools 4.3.1
 
 
 import java.sql.Blob;
@@ -14,6 +14,7 @@ public class Login  implements java.io.Serializable {
 
 
      private String usuario;
+     private Persona persona;
      private String password;
      private String nombre;
      private Short edad;
@@ -29,8 +30,9 @@ public class Login  implements java.io.Serializable {
     public Login(String usuario) {
         this.usuario = usuario;
     }
-    public Login(String usuario, String password, String nombre, Short edad, Date fecha, Blob archivo, String url, Set alumnoses) {
+    public Login(String usuario, Persona persona, String password, String nombre, Short edad, Date fecha, Blob archivo, String url, Set alumnoses) {
        this.usuario = usuario;
+       this.persona = persona;
        this.password = password;
        this.nombre = nombre;
        this.edad = edad;
@@ -46,6 +48,13 @@ public class Login  implements java.io.Serializable {
     
     public void setUsuario(String usuario) {
         this.usuario = usuario;
+    }
+    public Persona getPersona() {
+        return this.persona;
+    }
+    
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
     public String getPassword() {
         return this.password;

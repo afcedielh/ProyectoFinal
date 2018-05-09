@@ -1,5 +1,5 @@
 package com.ubosque.fifa.jhs.persistence;
-// Generated 6/05/2018 04:13:47 PM by Hibernate Tools 4.3.1
+// Generated 8/05/2018 07:48:31 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;

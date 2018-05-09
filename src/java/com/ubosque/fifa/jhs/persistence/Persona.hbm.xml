@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 6/05/2018 04:13:48 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 8/05/2018 07:48:32 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.ubosque.fifa.jhs.persistence.Persona" table="PERSONA" schema="JR" optimistic-lock="version">
         <id name="id" type="big_decimal">
@@ -20,17 +20,23 @@
         <property name="apellidos" type="string">
             <column name="APELLIDOS" not-null="true" />
         </property>
+        <set name="usuarios" table="USUARIO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PERSONA" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="com.ubosque.fifa.jhs.persistence.Usuario" />
+        </set>
         <set name="jugadors" table="JUGADOR" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="IDPERSONA" precision="22" scale="0" not-null="true" />
             </key>
             <one-to-many class="com.ubosque.fifa.jhs.persistence.Jugador" />
         </set>
-        <set name="usuarios" table="USUARIO" inverse="true" lazy="true" fetch="select">
+        <set name="logins" table="LOGIN" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="PERSONA" precision="22" scale="0" not-null="true" />
+                <column name="IDPERSONA" precision="38" scale="0" />
             </key>
-            <one-to-many class="com.ubosque.fifa.jhs.persistence.Usuario" />
+            <one-to-many class="com.ubosque.fifa.jhs.persistence.Login" />
         </set>
         <set name="tecnicos" table="TECNICO" inverse="true" lazy="true" fetch="select">
             <key>

@@ -1,5 +1,5 @@
 package com.ubosque.fifa.jhs.persistence;
-// Generated 6/05/2018 04:13:47 PM by Hibernate Tools 4.3.1
+// Generated 8/05/2018 07:48:31 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -17,8 +17,9 @@ public class Persona  implements java.io.Serializable {
      private String documento;
      private String nombres;
      private String apellidos;
-     private Set jugadors = new HashSet(0);
      private Set usuarios = new HashSet(0);
+     private Set jugadors = new HashSet(0);
+     private Set logins = new HashSet(0);
      private Set tecnicos = new HashSet(0);
 
     public Persona() {
@@ -32,14 +33,15 @@ public class Persona  implements java.io.Serializable {
         this.nombres = nombres;
         this.apellidos = apellidos;
     }
-    public Persona(BigDecimal id, Tipodocumento tipodocumento, String documento, String nombres, String apellidos, Set jugadors, Set usuarios, Set tecnicos) {
+    public Persona(BigDecimal id, Tipodocumento tipodocumento, String documento, String nombres, String apellidos, Set usuarios, Set jugadors, Set logins, Set tecnicos) {
        this.id = id;
        this.tipodocumento = tipodocumento;
        this.documento = documento;
        this.nombres = nombres;
        this.apellidos = apellidos;
-       this.jugadors = jugadors;
        this.usuarios = usuarios;
+       this.jugadors = jugadors;
+       this.logins = logins;
        this.tecnicos = tecnicos;
     }
    
@@ -78,6 +80,13 @@ public class Persona  implements java.io.Serializable {
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
+    public Set getUsuarios() {
+        return this.usuarios;
+    }
+    
+    public void setUsuarios(Set usuarios) {
+        this.usuarios = usuarios;
+    }
     public Set getJugadors() {
         return this.jugadors;
     }
@@ -85,12 +94,12 @@ public class Persona  implements java.io.Serializable {
     public void setJugadors(Set jugadors) {
         this.jugadors = jugadors;
     }
-    public Set getUsuarios() {
-        return this.usuarios;
+    public Set getLogins() {
+        return this.logins;
     }
     
-    public void setUsuarios(Set usuarios) {
-        this.usuarios = usuarios;
+    public void setLogins(Set logins) {
+        this.logins = logins;
     }
     public Set getTecnicos() {
         return this.tecnicos;

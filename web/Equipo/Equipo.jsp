@@ -217,10 +217,9 @@
                                                 <h:commandButton value="Guardar" action="#{equipoBean.insert()}" styleClass="btn btn-default"/>
                                                 <h:commandButton value="Actualizar" action="#{equipoBean.update()}" styleClass="btn btn-succes"/>
                                                 <h:commandButton value="Eliminar" action="#{equipoBean.delete()}" styleClass="btn btn-danger"/>                                       
-                                                <br>
-                                                <h:dataTable id="tablaArticulos" value="#{equipoBean.lista}" var="obj"
-                                                             border="1" styleClass="table">
-
+                                                <br><br>
+                                                <br>                                                
+                                                <h:dataTable id="tablaArticulos" value="#{equipoBean.lista}" var="obj" border="1" styleClass="table">
                                                     <h:column>
                                                         <f:facet name="header"><h:outputText value="Id"></h:outputText></f:facet>
                                                         <h:outputText value="#{obj.id}"></h:outputText>

@@ -48,5 +48,25 @@ Contributor(s):
     <property name="hibernate.connection.password">123456</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
     <property name="hibernate.show_sql">true</property>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Tecnico.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Pais.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Fase.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Persona.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Articulos.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Penalizacion.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Alumnos.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Partidoconvocados.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Estadopartido.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Tipodocumento.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Arbitro.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Estadio.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Reglas.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Posiciones.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Usuario.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Login.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Rol.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Tipotecnico.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Partido.hbm.xml"/>
+    <mapping resource="com/ubosque/fifa/jhs/persistence/Jugador.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

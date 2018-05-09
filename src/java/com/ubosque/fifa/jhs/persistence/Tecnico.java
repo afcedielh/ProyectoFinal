@@ -1,5 +1,5 @@
 package com.ubosque.fifa.jhs.persistence;
-// Generated 6/05/2018 04:13:47 PM by Hibernate Tools 4.3.1
+// Generated 8/05/2018 07:48:31 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -11,17 +11,17 @@ public class Tecnico  implements java.io.Serializable {
 
 
      private BigDecimal id;
-     private Persona persona;
      private Pais pais;
+     private Persona persona;
      private Tipotecnico tipotecnico;
 
     public Tecnico() {
     }
 
-    public Tecnico(BigDecimal id, Persona persona, Pais pais, Tipotecnico tipotecnico) {
+    public Tecnico(BigDecimal id, Pais pais, Persona persona, Tipotecnico tipotecnico) {
        this.id = id;
-       this.persona = persona;
        this.pais = pais;
+       this.persona = persona;
        this.tipotecnico = tipotecnico;
     }
    
@@ -32,19 +32,19 @@ public class Tecnico  implements java.io.Serializable {
     public void setId(BigDecimal id) {
         this.id = id;
     }
-    public Persona getPersona() {
-        return this.persona;
-    }
-    
-    public void setPersona(Persona persona) {
-        this.persona = persona;
-    }
     public Pais getPais() {
         return this.pais;
     }
     
     public void setPais(Pais pais) {
         this.pais = pais;
+    }
+    public Persona getPersona() {
+        return this.persona;
+    }
+    
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
     public Tipotecnico getTipotecnico() {
         return this.tipotecnico;
