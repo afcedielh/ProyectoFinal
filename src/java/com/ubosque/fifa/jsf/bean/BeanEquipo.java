@@ -8,11 +8,16 @@ import com.ubosque.fifa.jhs.bo.EquipoBO;
 import java.math.BigDecimal;
 import java.util.List;
 
-/**
- *
- * @author SergioRios
- */
 public class BeanEquipo {
+
+    private BigDecimal id;
+    private String nombre;
+    private BigDecimal poblacion;
+    private String capital;
+    private BigDecimal idequipo;
+    private EquipoBO equipoBO;
+    private List<BeanEquipo> lista;
+    private BeanEquipo seleccionado;
 
     public BigDecimal getId() {
         return id;
@@ -70,17 +75,16 @@ public class BeanEquipo {
         this.lista = lista;
     }
 
-    private BigDecimal id;
-    private String nombre;
-    private BigDecimal poblacion;
-    private String capital;
-    private BigDecimal idequipo;
-    private EquipoBO equipoBO;
-    private List<BeanEquipo> lista;
+    public BeanEquipo getSeleccionado() {
+        return seleccionado;
+    }
 
-   
-    public String insert() {
-        equipoBO.Crear(this);
+    public void setSeleccionado(BeanEquipo seleccionado) {
+        this.seleccionado = seleccionado;
+    }
+
+    public String Guardar() {
+        List<BeanEquipo> Lista3 = this.getLista();
         TraerTodos();
         return "";
     }
@@ -97,7 +101,16 @@ public class BeanEquipo {
         return "";
     }
 
-    public void TraerTodos() {
+    public String AgregarNuevo() {
         setLista(equipoBO.TraerTodos());
+        List<BeanEquipo> listaEquipo = this.getLista();
+        listaEquipo.add(new BeanEquipo());       
+        setLista(listaEquipo);
+        return "";
+    }
+
+    public String TraerTodos() {
+        setLista(equipoBO.TraerTodos());        
+        return "";
     }
 }

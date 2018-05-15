@@ -195,71 +195,38 @@
                                 <div class="grid-form">
                                     <div class="grid-form1">
                                         <h3 id="forms-example" class="">Gestionar Equipos</h3>
-                                        <h:form id="formaArticulos">
-                                            <center>
-
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Id</label>                                            
-                                                    <h:inputText value="#{equipoBean.id}" styleClass="form-control"/> 
-                                                </div> 
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Nombre</label>   
-                                                    <h:inputText value="#{equipoBean.nombre}" styleClass="form-control"/>
-                                                </div> 
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Capital</label>                                            
-                                                    <h:inputText value="#{equipoBean.capital}" styleClass="form-control"/> 
-                                                </div> 
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1">Poblacion</label>                                            
-                                                    <h:inputText value="#{equipoBean.poblacion}" styleClass="form-control"/> 
-                                                </div>                                      
-                                                <h:commandButton value="Guardar" action="#{equipoBean.insert()}" styleClass="btn btn-default"/>
-                                                <h:commandButton value="Actualizar" action="#{equipoBean.update()}" styleClass="btn btn-succes"/>
-                                                <h:commandButton value="Eliminar" action="#{equipoBean.delete()}" styleClass="btn btn-danger"/>                                       
-                                                <br><br>
-                                                <br>                                                
-                                                <h:dataTable id="tablaArticulos" value="#{equipoBean.lista}" var="obj" border="1" styleClass="table">
-                                                    <h:column>
-                                                        <f:facet name="header"><h:outputText value="Id"></h:outputText></f:facet>
-                                                        <h:outputText value="#{obj.id}"></h:outputText>
-                                                    </h:column>
-
-                                                    <h:column>
-                                                        <f:facet name="header"><h:outputText value="Nombre"></h:outputText></f:facet>
-                                                        <h:outputText value="#{obj.nombre}"/>
-                                                    </h:column>
-
-                                                    <h:column>
-                                                        <f:facet name="header"><h:outputText value="poblacion"></h:outputText></f:facet>
-                                                        <h:outputText value="#{obj.poblacion}"/>
-                                                    </h:column>
-
-                                                    <h:column>
-                                                        <f:facet name="header"><h:outputText value="capital"></h:outputText></f:facet>
-                                                        <h:outputText value="#{obj.capital}"/>
-                                                    </h:column>
-
-                                                    <h:column>
-                                                        <f:facet name="header"><h:outputText value="Nombre"></h:outputText></f:facet>
-                                                        <h:outputText value="#{obj.nombre}"/>
-                                                    </h:column>
-
-                                                </h:dataTable>
-
-                                            </center>
-
+                                        <h:form id="formaArticulos">                                                                             
+                                            <h:commandButton value="Consultar Equipos" action="#{equipoBean.TraerTodos()}" styleClass="btn btn-primary"/>                                      
+                                            <h:commandButton value="Nuevo" action="#{equipoBean.AgregarNuevo()}" styleClass="btn btn-success"/>                                   
+                                            <h:commandButton value="Guardar" action="#{equipoBean.Guardar()}" styleClass="btn btn-warning"/>
+                                            <br><br>
+                                            <br>                                                
+                                            <h:dataTable id="tablaArticulos" 
+                                                         value="#{equipoBean.lista}" 
+                                                         var="obj" 
+                                                         styleClass="table table-hover">                                                
+                                                <h:column>
+                                                    <f:facet name="header"><h:outputText value="Nombre"></h:outputText></f:facet>
+                                                    <h:inputText value="#{obj.nombre}" styleClass="form-control"/> 
+                                                </h:column>
+                                                <h:column>
+                                                    <f:facet name="header"><h:outputText value="Población"></h:outputText></f:facet>
+                                                    <h:inputText value="#{obj.poblacion}" styleClass="form-control"/>
+                                                </h:column>
+                                                <h:column>
+                                                    <f:facet name="header"><h:outputText value="Capital"></h:outputText></f:facet>
+                                                    <h:inputText value="#{obj.capital}" styleClass="form-control"/>
+                                                </h:column>
+                                            </h:dataTable>                                         
                                         </h:form>
                                     </div>
                                 </div>
                             </f:view>
                         </div>
                     </div>
-
                     <!--//faq-->
                     <!---->
-                    <div class="copy">
-                        <p> &copy; 2016 Minimal. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>	    </div>
+                    <div class="copy"><p> &copy; 2016 Minimal. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>	    </div>
                 </div>
             </div>
             <div class="clearfix"> </div>
