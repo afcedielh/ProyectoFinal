@@ -3,11 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ubosque.fifa.dto;
+package com.ubosque.fifa.jhs.bo;
+
+import com.ubosque.fifa.jhs.persistence.Rol;
+import java.util.List;
 
 /**
  *
  * @author afced
  */
-public class UsuarioDTO {    
+public interface RolBO {
+    List<Rol> ConsultarTodos();
 }

@@ -35,5 +35,4 @@ public class ImplEquipo extends HibernateDaoSupport implements IfaceEquipo {
     public List TraerTodos() {
         return getHibernateTemplate().find("from Pais");
     }
-
 }
